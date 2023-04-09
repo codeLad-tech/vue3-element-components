@@ -1,15 +1,8 @@
 <template>
   <div>
     <el-button type="primary" @click="open">open</el-button>
-    <m-modal-form
-      isScroll
-      :options="options"
-      title="编辑用户"
-      width="50%"
-      v-model:visible="visible"
-      :on-change="handleChange"
-      :on-success="handleSuccess"
-    >
+    <m-modal-form isScroll :options="options" title="编辑用户" width="50%" v-model:visible="visible" :on-change="handleChange"
+      :on-success="handleSuccess">
       <template #footer="scope">
         <el-button @click="cancel(scope.form)">取消</el-button>
         <el-button type="primary" @click="confirm(scope.form)">确认</el-button>
@@ -26,7 +19,7 @@
 
 <script lang='ts' setup>
 import { ref } from 'vue'
-import { FormOptions } from '../../components/form/src/types/types'
+import { FormOptions } from '../../components/form/types/types'
 import { ElMessage } from 'element-plus'
 
 let visible = ref<boolean>(false)
@@ -237,5 +230,4 @@ let handleChange = (val: any) => {
 }
 </script>
 
-<style lang='scss' scoped>
-</style>
+<style lang='scss' scoped></style>

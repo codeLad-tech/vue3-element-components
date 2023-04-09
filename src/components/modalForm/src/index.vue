@@ -2,18 +2,9 @@
   <div :class="{ 'm-choose-icon-dialog-body-height': isScroll }">
     <el-dialog v-model="dialogVisible" v-bind="$attrs">
       <template #default>
-        <m-form
-          ref="form"
-          :options="options"
-          label-width="100px"
-          @on-change="onChange"
-          @before-upload="beforeUpload"
-          @on-preview="onPreview"
-          @on-remove="onRemove"
-          @before-remove="beforeRemove"
-          @on-success="onSuccess"
-          @on-exceed="onExceed"
-        >
+        <m-form ref="form" :options="options" label-width="100px" @on-change="onChange" @before-upload="beforeUpload"
+          @on-preview="onPreview" @on-remove="onRemove" @before-remove="beforeRemove" @on-success="onSuccess"
+          @on-exceed="onExceed">
           <template #uploadArea>
             <slot name="uploadArea"></slot>
           </template>
@@ -31,7 +22,7 @@
 
 <script lang='ts' setup>
 import { PropType, ref, watch } from 'vue'
-import { FormOptions } from '../../form/src/types/types'
+import { FormOptions } from '../../form/types/types'
 let props = defineProps({
   // 是否只在可视区域内滚动
   isScroll: {
@@ -84,5 +75,4 @@ watch(() => dialogVisible.value, val => {
 })
 </script>
 
-<style lang='scss' scoped>
-</style>
+<style lang='scss' scoped></style>

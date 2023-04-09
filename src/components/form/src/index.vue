@@ -32,7 +32,7 @@
 
 <script lang='ts' setup>
 import { PropType, ref, onMounted, watch, computed, useSlots } from 'vue'
-import { FormInstance, FormOptions, styleObj } from './types/types'
+import { FormInstance, FormOptions, styleObj } from '../types/types'
 import cloneDeep from 'lodash/cloneDeep'
 
 const props = defineProps({
@@ -100,31 +100,17 @@ const validate = (callback: () => {}) => form.value!.validate(callback)
 defineExpose({ resetFields, validate })
 
 // 生命周期
-onMounted(() => {
-  initForm()
-})
+onMounted(initForm)
+
 
 // 计算el-col组件的span值
 const colSpan = computed(() => {
   return (parseInt(24 as any / props.cows as any) <= 6) ? 6 : (parseInt(24 as any / props.cows as any))
 })
 
-// 设置按钮位置
-const actionBtnPosition = computed(() => {
-  const styleObj: styleObj = {}
-
-  styleObj.paddingLeft = (props.gutter / 2) + 'px'
-  if (props.actionPosition === 'right') {
-    styleObj.marginRight = (props.gutter / 2) + 'px'
-  }
-
-  return styleObj
-})
 
 // 监听父组件传递进来的options
-watch(() => props.options, () => {
-  initForm()
-}, { deep: true })
+watch(() => props.options, initForm, { deep: true })
 
 
 const { custom } = useSlots()
