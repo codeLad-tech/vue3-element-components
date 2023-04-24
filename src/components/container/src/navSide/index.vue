@@ -14,46 +14,6 @@ let data = [
     index: '/'
   },
   {
-    icon: 'Check',
-    name: '图标选择器',
-    index: '/chooseIcon'
-  },
-  {
-    icon: 'Location',
-    name: '省市区选择',
-    index: '/chooseArea'
-  },
-  {
-    icon: 'Sort',
-    name: '趋势标记',
-    index: '/trend'
-  },
-  {
-    icon: 'Timer',
-    name: '时间选择',
-    index: '/chooseTime'
-  },
-  {
-    icon: 'Bell',
-    name: '通知菜单',
-    index: '/notification'
-  },
-  {
-    icon: 'Menu',
-    name: '导航菜单',
-    index: '/menu'
-  },
-  {
-    icon: 'TurnOff',
-    name: '城市选择',
-    index: '/chooseCity'
-  },
-  {
-    icon: 'DArrowRight',
-    name: '进度条',
-    index: '/progress'
-  },
-  {
     icon: 'ScaleToOriginal',
     name: '日历',
     index: '/calendar'
@@ -64,11 +24,6 @@ let data = [
     index: '/form'
   },
   {
-    icon: 'Setting',
-    name: '弹出框表单',
-    index: '/modalForm'
-  },
-  {
     icon: 'ShoppingBag',
     name: '表格',
     index: '/table'
@@ -76,5 +31,4 @@ let data = [
 ]
 </script>
 
-<style lang='scss' scoped>
-</style>
+<style lang='scss' scoped></style>
