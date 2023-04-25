@@ -28,3 +28,26 @@ export interface ColumnOptions {
   filterMethod?: () => boolean;
   filteredValue?: [];
 }
+
+import { Component } from "vue";
+export interface paginations {
+  small?: boolean;
+  background?: boolean;
+  pageSize?: number;
+  defaultPageSize?: number;
+  total?: number;
+  pageCount?: number;
+  pagerCount?: number;
+  currentPage?: number;
+  layout?: "prev, pager, next, total, jumper, ->" | string;
+  pageSizes?: number[];
+  popperClass?: string;
+  prevText?: string;
+  prevIcon?: string | Component;
+  nextText?: string;
+  nextIcon?: string | Component;
+  disabled?: boolean;
+  position?: "left" | "center" | "right";
+  hideOnSinglePage?: boolean;
+  [propName: string]: any;
+}

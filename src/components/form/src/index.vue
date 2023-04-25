@@ -31,7 +31,7 @@
 </template>
 
 <script lang='ts' setup>
-import { PropType, ref, onMounted, watch, computed, useSlots } from 'vue'
+import { PropType, ref, onMounted, watch, computed, useSlots, useAttrs } from 'vue'
 import { FormInstance, FormOptions, styleObj } from '../types/types'
 import cloneDeep from 'lodash/cloneDeep'
 
@@ -88,6 +88,7 @@ const initForm = () => {
     rules.value = cloneDeep(r)
   }
 }
+
 
 // 重置表单
 const resetFields = () => {
