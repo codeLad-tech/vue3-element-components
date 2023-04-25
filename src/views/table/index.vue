@@ -1,91 +1,62 @@
 
 <template>
-  <m-table :options="tableOptions" :columns="columns"> </m-table>
+  <v-table :options="tableOptions" :columns="columns">
+    <template #date-header>1</template>
+  </v-table>
 </template>
 
 <script lang='ts' setup>
 import { ColumnOptions } from '../../components/table/types'
+import Item from "./slot"
 const tableOptions = {
-  data: [],
-  event: {},
+  data: [{
+    date: '2016-05-03',
+    name: 'Tom',
+    state: 'California',
+    city: 'Los Angeles',
+    address: 'No. 189, Grove St, Los Angeles',
+    zip: 'CA 90036',
+    tag: 'Home',
+  },
+  {
+    date: '2016-05-02',
+    name: 'Tom',
+    state: 'California',
+    city: 'Los Angeles',
+    address: 'No. 189, Grove St, Los Angeles',
+    zip: 'CA 90036',
+    tag: 'Office',
+  },
+  {
+    date: '2016-05-04',
+    name: 'Tom',
+    state: 'California',
+    city: 'Los Angeles',
+    address: 'No. 189, Grove St, Los Angeles',
+    zip: 'CA 90036',
+    tag: 'Home',
+  },
+  {
+    date: '2016-05-01',
+    name: 'Tom',
+    state: 'California',
+    city: 'Los Angeles',
+    address: 'No. 189, Grove St, Los Angeles',
+    zip: 'CA 90036',
+    tag: 'Office',
+  }],
+  stripe: true,
+  border: true,
+  defaultSort: { prop: 'date', order: 'descending' }
 }
-const columns: ColumnOptions = []
 
-// let tableData = ref<any[]>([])
-// let editRowIndex = ref<string>('')
-// let svg = `
-//         <path class="path" d="
-//           M 30 15
-//           L 28 17
-//           M 25.61 25.61
-//           A 15 15, 0, 0, 1, 15 30
-//           A 15 15, 0, 1, 1, 27.99 7.5
-//           L 15 15
-//         " style="stroke-width: 4px; fill: rgba(0, 0, 0, 0)"/>
-//       `
-// setTimeout(() => {
-// tableData.value = [
-//   {
-//     date: '2016-05-03',
-//     name: 'Tom1',
-//     address: 'No. 189, Grove St, Los Angeles',
-//   },
-//   {
-//     date: '2016-05-02',
-//     name: 'Tom2',
-//     address: 'No. 189, Grove St, Los Angeles',
-//   },
-//   {
-//     date: '2016-05-04',
-//     name: 'Tom3',
-//     address: 'No. 189, Grove St, Los Angeles',
-//   },
-//   {
-//     date: '2016-05-01',
-//     name: 'Tom4',
-//     address: 'No. 189, Grove St, Los Angeles',
-//   },
-// ]
-// }, 3000)
-
-// let current = ref<number>(1)
-// let pageSize = ref<number>(10)
-// let total = ref<number>(0)
-// let getData = () => {
-//   axios.post('/api/list', {
-//     current: current.value,
-//     pageSize: pageSize.value,
-//   }).then((res: any) => {
-//     if (res.data.code === '200') {
-//       tableData.value = res.data.data.rows
-//       total.value = res.data.data.total
-//       console.log(res.data.data)
-//     }
-//   })
-// }
-// let handleSizeChange = (val: number) => {
-//   pageSize.value = val
-//   getData()
-// }
-// let handleCurrentChange = (val: number) => {
-//   current.value = val
-//   getData()
-// }
-// onMounted(() => {
-//   getData()
-// })
-
-
-// let edit = (scope: any) => {
-//   // console.log(scope)
-//   editRowIndex.value = 'edit'
-// }
-// let sure = (scope: any) => {
-//   console.log(scope)
-// }
-// let confirm = (scope: any) => {
-//   // console.log(scope)
-// }
+const columns: ColumnOptions[] = [
+  { prop: 'date', label: 'date', fixed: true, width: "150", slot: { header: true, default: false } },
+  { prop: 'name', label: 'name', width: "150" },
+  { prop: 'state', label: 'state', width: "300" },
+  { prop: 'address', label: 'address', width: "300" },
+  { prop: 'city', label: 'city', width: "300" },
+  { prop: 'zip', label: 'zip', width: "150" },
+]
 </script>
 
-<style lang='scss' scoped></style>

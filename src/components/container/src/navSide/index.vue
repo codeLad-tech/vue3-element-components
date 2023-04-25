@@ -1,5 +1,5 @@
 <template>
-  <m-menu :collapse="collapse" :data="data" router :defaultActive="$route.path"></m-menu>
+  <v-menu :collapse="collapse" :data="data" router :defaultActive="$route.path"></v-menu>
 </template>
 
 <script lang='ts' setup>

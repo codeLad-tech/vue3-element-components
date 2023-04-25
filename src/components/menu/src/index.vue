@@ -1,10 +1,5 @@
 <template>
-  <el-menu
-    class="el-menu-vertical-demo"
-    :default-active="defaultActive"
-    :router="router"
-    v-bind="$attrs"
-  >
+  <el-menu class="el-menu-vertical-demo" :default-active="defaultActive" :router="router" v-bind="$attrs">
     <template v-for="(item, i) in data" :key="i">
       <el-menu-item v-if="!item[children] || !item[children].length" :index="item[index]">
         <component v-if="item[icon]" :is="`el-icon-${toLine(item[icon])}`"></component>
@@ -25,11 +20,10 @@
 </template>
 
 <script lang='ts' setup>
-import { PropType } from 'vue'
+import { PropType, } from 'vue'
 import { toLine } from '../../../utils'
 
-
-let props = defineProps({
+const props = defineProps({
   // 导航菜单的数据
   data: {
     type: Array as PropType<any[]>,
@@ -75,6 +69,7 @@ svg {
   width: 1em;
   height: 1em;
 }
+
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200px;
 }

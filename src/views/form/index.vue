@@ -1,6 +1,6 @@
 <template>
   <div>
-    <c-form ref="form" :options="options" label-position="left" :cows="5" action-position="right">
+    <v-form ref="form" :options="options" label-position="left" :cows="5" action-position="right">
       <template #action="scope">
         <el-button type="primary" @click="submitForm">提交</el-button>
         <el-button @click="resetForm">重置</el-button>
@@ -13,7 +13,7 @@
       <template #default="scope">
         自定义其他内容
       </template>
-    </c-form>
+    </v-form>
   </div>
 </template>
 

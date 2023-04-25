@@ -1,5 +1,5 @@
 <template>
-  <m-calendar :events="events" :eventContent="eventContent" @date-click="dateClick"></m-calendar>
+  <v-calendar :events="events" :eventContent="eventContent" @date-click="dateClick"></v-calendar>
 </template>
 
 <script lang='ts' setup>

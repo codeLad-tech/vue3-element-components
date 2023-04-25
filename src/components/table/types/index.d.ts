@@ -1,18 +1,30 @@
-import { PropType } from "vue";
-
 export interface ColumnOptions {
-  type?: string;
+  type?: "selection" | "index" | "expand";
   index?: number;
   label?: string;
   columnKey?: string;
+  prop?: string;
   width?: string | number;
   minWidth?: string | number;
   fixed?: string | boolean;
   renderHeader?: (a: any, b: any) => {};
   sortable?: boolean | string;
-  sortMethod?: (a: any, b: any) => {};
+  sortMethod?: (a: any, b: any) => number;
   sortBy?: string | Array<any>;
-  prop?: string;
-  slot?: boolean;
-  [propName: string]: any;
+  sortOrders?: [];
+  resizable?: boolean;
+  formatter?: () => any;
+  slot?: { default?: boolean; header?: boolean };
+  align?: string;
+  showOverflowTooltip?: object;
+  headerAlign?: "left" | "center" | "right";
+  className?: string;
+  labelClassName?: string;
+  selectable?: () => {};
+  reserveSelection?: boolean;
+  filters?: Array<{ text: string; value: string }>;
+  filterPlacement?: string;
+  filterMultiple?: boolean;
+  filterMethod?: () => boolean;
+  filteredValue?: [];
 }
