@@ -3,9 +3,6 @@
     <div style="flex:1;">
       <v-menu :data="data1" defaultActive="1" name="a" index="b" icon="c" children="d"></v-menu>
     </div>
-    <div style="flex:1;">
-      <m-infinite-menu :data="data2" defaultActive="2" name="a" index="b" icon="c" children="d"></m-infinite-menu>
-    </div>
   </div>
 </template>
 
