@@ -25,7 +25,6 @@
 <script lang='ts' setup>
 import { PropType, computed, ref, defineEmits, defineExpose, reactive, watch } from 'vue'
 import cloneDeep from 'lodash/cloneDeep'
-// import { useMousePosition } from "../hooks/request"
 import { ColumnOptions, paginations } from '../types'
 
 const props = defineProps({
@@ -33,6 +32,11 @@ const props = defineProps({
   options: {
     type: Object,
     default: ({})
+  },
+  //数据源
+  data: {
+    type: Array,
+    default: ([])
   },
   // el-table-colums 参数
   columns: {
@@ -51,16 +55,12 @@ const props = defineProps({
   }
 })
 
-const tableData = reactive([])
-const empty = computed(() => !(tableData.length)) // table数据是否为空
+const tableData = ref<any>([])
+tableData.value = cloneDeep(props.data)
+const empty = computed(() => !(tableData.value.length)) // table数据是否为空
 defineExpose({ tableData })
 
 const emits = defineEmits(['selection-change'])
-
-// const { x, y } = useMousePosition();
-// watch([x, y], () => {
-//   console.log(1)
-// })
 
 // 多选
 const handleSelectionChange = (val: []) => emits('selection-change', val)
